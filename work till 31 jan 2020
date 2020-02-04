@@ -1,6 +1,6 @@
 #########  Flask Restful API  #########
 
-#Features
+# Api's Features
 
 1. Create User
 2. Get a User
@@ -8,7 +8,7 @@
 4. Get all users
 
 
-#User Interface  :  Swagger UI
+#User Interface  :  Swagger UI.
 
 User Authotication  : Token Based Authontication 
 		      (JSON web Tokens)
