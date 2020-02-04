@@ -1,0 +1,35 @@
+###########  To print fabonacci Series   #################
+
+
+
+terms=int(input("no. of terms : "))
+a = 0
+b = 1
+count = 0
+
+while count < terms:
+    print(a)
+    n = a + b
+    a = b
+    b = n
+    count += 1
+
+
+
+
+
+
+###########   To check palindrome    ##################
+
+
+
+str = input("Enter your string : ")
+#rev=reversed(str)
+#str=reversed(str)
+rev=str[::-1]
+if str == rev:
+    print("palindrome")
+else:
+    print("no")
+
+

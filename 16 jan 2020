@@ -1,0 +1,254 @@
+############list functions################
+lst=[1,2,3,4,5,6,7,8]
+lst1=[9,10,11]
+
+#extend()
+lst.extend(lst1)
+print(lst)
+
+#insert()
+lst.insert(0,0)
+print(lst)
+
+#remove()
+lst.remove(11)
+print(lst)
+
+#insert
+lst.insert(1,3)
+print(lst)
+
+#count()
+print(lst.count(3))
+
+#pop()
+returned=lst.pop()
+print(returned)
+
+#reverse()
+lst.reverse()
+print(lst)
+
+
+#sort()
+lst.sort()
+print(lst)
+
+#copy()
+#new_lst=lst.copy()
+#print(new_lst)
+
+#append
+lst.append(11)
+print(lst)
+
+#sum
+sumoflist=sum(lst)
+print(sumoflist)
+
+
+
+
+#enumerate
+lsts=['one','two','three','four','five','six']
+enumerate_lsts=enumerate(lsts)
+print(list(enumerate_lsts))
+fltr=['one','three','five']
+
+#zip
+result=zip(lst,fltr)
+print(result)
+
+
+
+##########string functions############ 
+
+string1='python is High level language'
+string1=string1.capitalize()
+print(string1)
+
+string1=string1.upper()
+print(string1)
+
+string1=string1.lower()
+print(string1)
+
+
+string1=string1.swapcase()
+print(string1)
+
+string1=string1.endswith(' language')
+print(string1)
+
+string1=string1.endswith('LANGUAGE')
+print(string1)
+
+string='this is Python language it is high level language and is interpreted language'
+print(string.count(' is'))
+
+print(string.encode())
+
+print(string.index('high'))
+
+print(string.find('that'))
+
+print(string.isalnum())
+print(string.isalpha())
+#print(string.isnumeric())
+print(string.islower())
+print(string.isprintable())
+print(string.isspace())
+print(string.istitle())
+
+
+
+#########Dictionary Functions#########
+
+dic={'one':1,'two':2,'three':3}
+print(dic.items())
+print(dic.keys())
+print(dic.values())
+
+
+newdic=dic.copy()
+print(newdic)
+
+dictionary={'Apple','Mango','Orange'}
+value='fruit'
+fruits=dict.fromkeys(dictionary,value)
+print(fruits)
+
+
+person={'1name':'Tom','1age':10,'2name':'Jerry','2age':20,'3name':'Nobita','3age':15}
+print(person.get('2name'))
+
+result=person.popitem()
+print(result)
+
+
+returned=person.pop('3name')
+print(returned)
+
+age=person.setdefault('4age')
+print(age)
+
+
+person1={'4name':'Doraemon'}
+person.update(person1)
+print(person)
+
+num={1:1,2:4,3:9,4:16,5:25}
+num.clear()
+print(num)
+
+print(len(newdic))
+
+#update value
+person['3age']=14
+print(person)
+
+#add item 
+person['5name']='suneeo'
+print(person)   
+
+
+
+
+################statements####################
+#if statement
+
+if 4 in[2,4,5,1,6]:
+	print('4 exists in the list')
+
+#if else statement
+if 6 not in[1,2,3,4,5,6,7]:
+	print('6 exist in the list')
+else:
+	print('6 exist in the list')
+
+#if-elif-else statement
+marks=89
+if 100>marks>80:
+	print('You scored A grade!')
+elif 80>marks>60:
+	print('You scored B grade!')
+elif 60>marks>40:
+	print('You scored C grade!')
+else:
+	print('You are Fail')
+ 
+#Break statement
+for num in[2,4,6,1,3,5,3,4,6,7,5,3]:
+	print(num)
+	if(num==6):
+		print("number 6 is found")
+		break
+
+
+
+#Switch statement
+
+choice=input("Enter any no.1-3 :")
+switch(choice)
+{
+	Case 1:if choice==1;
+	print("You Entered 1");
+	break;
+	Case 2:if choice==2;
+	print("You Entered 2");
+	break;
+	Case 3:if choice==3;
+	print("You Entered 3");
+	break;
+	default:print("Enter valid no.");
+	break;
+}
+
+
+#LOOPS
+#While loop
+
+n = 10
+sum = 0
+i = 1
+while i <= n:
+	sum = sum + i
+	i = i+1
+	print("The sum is", sum)
+
+
+#For loop
+
+for i in [0,2,5,5,6,2,3,1]:
+	print(i)
+
+	
+
+#dictionary
+# dictionary={'id':28,'a':10}
+# print(dictionary.items())
+
+# #sort() and sorted() function
+# lists=[10,9,20,15,24,11,2,4]
+# print(lists)
+# lists.sort()
+# print("Sorted List :",lists)
+
+
+
+
+
+
+
+
+
+elif i>5:
+			j=i-5
+			print(j)
+			if j in store:
+				print("yes")
+				index = store.index(j)
+				print(store)
+				del store[index]
+       				print(store)
+       			store.append(i)

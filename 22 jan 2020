@@ -1,0 +1,104 @@
+################  Flask work on pycharm  ####################
+
+
+from flask import Flask
+from flask_restful import Resource, Api
+from flask_restful import reqparse
+from flaskext.mysql import MySQL
+
+
+# MySQL configurations
+
+
+app = Flask(__name__)
+api = Api(app)
+
+mysql = MySQL()
+
+
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = '123'
+app.config['MYSQL_DATABASE_DB'] = 'flaskdata'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+mysql.init_app(app)
+conn = mysql.connect()
+cursor = conn.cursor()
+
+class CreateUser(Resource):
+    def post(self):
+        try:
+            # Parse the arguments
+
+            parser = reqparse.RequestParser()
+            parser.add_argument('email', type=str, help='Email address to create user')
+            parser.add_argument('password', type=str, help='Password to create user')
+            args = parser.parse_args()
+
+            _userEmail = args['email']
+            _userPassword = args['password']
+
+            return {'Email': args['email'], 'Password': args['password']}
+
+        except Exception as e:
+            return {'error': str(e)}
+
+        #return {'status': 'success'}
+
+api.add_resource(CreateUser, '/CreateUser')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8000, host='10.91.0.59')
+
+
+
+
+
+
+
+
+
+###################  MySQL work on workbench  #########################
+
+###########Table created in workbench
+
+CREATE TABLE `flaskdata`.`student` (
+`UserId` INT NOT NULL AUTO_INCREMENT,
+`UserName` VARCHAR(45) NULL,
+`Password` VARCHAR(45) NULL,
+PRIMARY KEY (`UserId`));
+
+
+###########Created stored procedure
+
+
+DELIMITER $$
+USE `flaskdata`$$
+CREATE PROCEDURE `createuser` (
+IN p_Username varchar(50),
+IN p_Password varchar(50)
+)
+BEGIN
+
+if ( select exists (select 1 from tblUser where UserName = p_username) ) THEN
+
+    select 'Username Exists !!';
+
+ELSE
+
+insert into student
+(
+    UserName,
+    Password
+)
+values
+(
+    p_Username,
+    p_Password
+);
+
+END IF;
+
+END$$
+
+DELIMITER ;

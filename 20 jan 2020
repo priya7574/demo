@@ -1,0 +1,19 @@
+##########   Task Circle of List  #########
+
+
+
+t_people=int(input('Enter number of people in circle : '))
+alive=list(range(1,t_people+1))
+killed=[]
+s_holder=alive[0]
+while len(alive)!=1:
+    if s_holder==alive[-1]:
+        killed.append(alive.pop(0))
+    else:
+        killed.append(alive.pop(alive.index(s_holder)+1))
+    if s_holder==alive[-1]:
+        s_holder=alive[0]
+        continue
+    s_holder=alive[alive.index(s_holder)+1]
+    
+print('\nLast person holding Sword : '+str(s_holder)+'th')

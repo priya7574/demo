@@ -1,0 +1,41 @@
+###################### List Task ######################
+
+
+
+lst=[5,5,15,5,5,100,20]
+
+def shop(lst):
+	store=[]
+	val=False
+	for i in lst:
+		val=False
+		print('#########')
+		j=i-5
+		if val==True:
+			break
+		if i==5:
+			val=True
+			#print(type(i))
+			store.append(i)
+			#print("##########")
+			#print(store)
+			print("True")
+		elif (j%5)==0:
+			count=(j/5)
+			#print(count)
+			if count<=store.count(5):
+				#print("if")
+				#print(lst[0:count])
+				for n in store[0:count-1]:
+					store.remove(n)
+					#print(store)
+					print("True")
+
+
+				#print("yes")
+				
+			else:
+				print("False")
+				
+	print(store) 		
+shop(lst)
